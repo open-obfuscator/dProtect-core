@@ -1,11 +1,12 @@
 name: Continuous Integration
 on:
   pull_request:
+    # Defer the tests to the original repo
     branches:
-      - master
+      - skip
   push:
     branches:
-      - master
+      - skip
 jobs:
   build:
     runs-on: ubuntu-20.04

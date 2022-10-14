@@ -15,7 +15,6 @@ include('examples')
 include('tools')
 
 // Rename base as proguard-core for backwards compatibility
-project(':base').name = "proguard-core"
+project(':base').name = "dprotect-core"
 project(':android').name = 'proguard-core-android'
 project(':tools').name = 'proguard-core-tools'
-

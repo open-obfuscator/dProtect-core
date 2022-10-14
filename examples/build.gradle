@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':proguard-core')
+    implementation project(':dprotect-core')
     implementation project(':proguard-core-android')
 }
 
