@@ -2,10 +2,10 @@ name: Documentation
 on:
   pull_request:
     branches:
-      - master
+      - skip
   push:
     branches:
-      - master
+      - skip
 jobs:
   build:
     runs-on: ubuntu-latest

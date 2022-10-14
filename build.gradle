@@ -11,14 +11,14 @@ plugins {
 }
 
 allprojects {
-    group = 'com.guardsquare'
-    version = proguardCoreVersion
+    group = 're.obfuscator'
+    version = dprotectCoreVersion
 
     repositories {
         mavenCentral()
         google()
     }
-    
+
     pluginManager.withPlugin('java') {
         java {
             toolchain {
@@ -63,10 +63,10 @@ clean {
 
 distributions {
     main {
-        distributionBaseName.set('proguard-core')
+        distributionBaseName.set('dprotect-core')
         contents {
             into('lib') {
-                from tasks.getByPath(":proguard-core:jar").outputs
+                from tasks.getByPath(":dprotect-core:jar").outputs
             }
             into('docs') {
                 from('docs/md') {

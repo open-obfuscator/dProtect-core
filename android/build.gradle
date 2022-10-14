@@ -13,11 +13,11 @@ plugins {
 }
 
 dependencies {
-    api project(":proguard-core")
+    api project(":dprotect-core")
     implementation 'com.android.tools:r8:3.3.75'
 
-    testImplementation(testFixtures(project(":proguard-core")))
-    testFixturesImplementation(testFixtures(project(":proguard-core")))
+    testImplementation(testFixtures(project(":dprotect-core")))
+    testFixturesImplementation(testFixtures(project(":dprotect-core")))
 
     testImplementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"
     testImplementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"

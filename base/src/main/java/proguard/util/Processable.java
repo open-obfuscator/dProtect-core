@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 package proguard.util;
+import dprotect.util.ObfuscationProcessable;
 
 /**
  * Base interface for entities that need flags and/or additional information
@@ -30,7 +31,7 @@ package proguard.util;
  * @author Johan Leys
  * @author Eric Lafortune
  */
-public interface Processable
+public interface Processable extends ObfuscationProcessable
 {
     /**
      * Sets the processing flags.

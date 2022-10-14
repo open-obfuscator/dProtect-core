@@ -1,0 +1,23 @@
+name: Trigger dProtect CI
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Trigger dProtect workflow
+        env:
+          DPROTECT_WORKFLOW_TOKEN: ${{ secrets.DPROTECT_WORKFLOW_TOKEN }}
+        shell: bash
+        run: |
+          docker run \
+            -v $GITHUB_WORKSPACE:/dprotect-core \
+            -e DPROTECT_WORKFLOW_TOKEN=$DPROTECT_WORKFLOW_TOKEN \
+            --rm \
+            openobfuscator/deployment python3 /dprotect-core/.github/scripts/trigger_dprotect.py
+
