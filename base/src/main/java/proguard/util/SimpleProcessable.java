@@ -17,6 +17,8 @@
  */
 package proguard.util;
 
+import dprotect.util.ObfuscationInfo;
+
 /**
  * This class provides a straightforward implementation of the Processable
  * interface.
@@ -24,6 +26,7 @@ package proguard.util;
  * @author Eric Lafortune
  */
 public class SimpleProcessable
+extends      ObfuscationInfo
 implements   Processable
 {
     public int    processingFlags;
@@ -46,7 +49,7 @@ implements   Processable
         this.processingInfo  = processingInfo;
     }
 
-    
+
     // Implementations for Processable.
 
     @Override

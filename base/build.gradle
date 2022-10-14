@@ -39,7 +39,7 @@ dependencies {
 }
 
 jar {
-    archiveBaseName = 'proguard-core'
+    archiveBaseName = 'dprotect-core'
     manifest {
         attributes('Implementation-Version': archiveVersion.get())
     }
@@ -93,12 +93,12 @@ jacocoTestReport {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifactId = 'proguard-core'
+            artifactId = 'dprotect-core'
             from components.java
             pom {
-                name = 'ProGuardCORE'
-                description = 'ProGuardCORE is a free library to read, analyze, modify, and write Java class files.'
-                url = 'https://guardsquare.github.io/proguard-core'
+                name = 'dProtectCORE'
+                description = 'dProtectCORE is a fork of ProguardCORE to support enhanced code obfuscation'
+                url = 'https://obfuscator.re'
                 developers {
                     developer {
                         id = 'lafortune'
@@ -117,11 +117,11 @@ publishing {
                 }
                 issueManagement {
                     system = 'Github Tracker'
-                    url = 'https://github.com/Guardsquare/proguard-core/issues'
+                    url = 'https://github.com/open-obfuscator/dprotect-core/issues'
                 }
                 scm {
-                    url = 'https://github.com/Guardsquare/proguard-core.git'
-                    connection = 'scm:git:https://github.com/Guardsquare/proguard-core.git'
+                    url = 'https://github.com/open-obfuscator/dprotect-core.git'
+                    connection = 'scm:git:https://github.com/open-obfuscator/dprotect-core.git'
                 }
                 properties = [
                         'project.build.sourceEncoding': 'UTF-8'
@@ -130,10 +130,10 @@ publishing {
             repositories {
                 maven {
                     name = 'Github'
-                    url = uri('https://maven.pkg.github.com/guardsquare/proguard-core')
+                    url = uri('https://maven.pkg.github.com/open-obfuscator/dProtect')
                     credentials {
-                        username = project.findProperty('PROGUARD_GITHUB_USERNAME')
-                        password = project.findProperty('PROGUARD_GITHUB_TOKEN')
+                        username = System.getenv("DPROTECT_GITHUB_USERNAME")
+                        password = System.getenv("DPROTECT_GITHUB_TOKEN")
                     }
                 }
             }
